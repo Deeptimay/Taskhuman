@@ -1,10 +1,10 @@
 package com.example.taskhuman.base.api
 
+import com.example.taskhuman.dataModels.FavAddResponse
+import com.example.taskhuman.dataModels.FavRemoveResponse
 import com.example.taskhuman.dataModels.TopicListResponse
-import retrofit2.http.GET
-import retrofit2.http.Headers
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
+
 
 interface TaskHumanApi {
 
@@ -13,8 +13,13 @@ interface TaskHumanApi {
         "Content-Type: application/json",
         "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQ3MTYsInVzZXJzIjp7InN0YXR1cyI6MCwidHlwZSI6MCwiaXNNb2JpbGVWZXJpZmllZCI6dHJ1ZX0sImlhdCI6MTY3OTU3MzU4N30.gaiGbeN9tWIojmvSj0imKtCWW0wMhLzN-UjmXevzuyk"
     )
-    @GET("v0.8/discover/topicDetails/physical%20fitness")
-    suspend fun getTopicList(): TopicListResponse
+    @GET("v0.8/discover/topicDetails/{topicName}")
+    suspend fun getTopicList(
+        @Path(
+            value = "topicName",
+            encoded = true
+        ) topicName: String?
+    ): TopicListResponse
 
     @Headers(
         "Accept: */*",
@@ -25,7 +30,7 @@ interface TaskHumanApi {
     suspend fun addFavTopic(
         @Query("skillName") skillName: String,
         @Query("dictionaryName") dictionaryName: String
-    ): Any
+    ): FavAddResponse
 
     @Headers(
         "Accept: */*",
@@ -35,5 +40,5 @@ interface TaskHumanApi {
     @POST("v0.8/favorite/remove")
     suspend fun removeFavTopic(
         @Query("skillName") skillName: String
-    ): Any
+    ): FavRemoveResponse
 }

@@ -1,16 +1,27 @@
 package com.example.taskhuman.repository
 
-import androidx.lifecycle.LiveData
 import com.example.taskhuman.base.api.TaskHumanApi
+import com.example.taskhuman.dataModels.FavAddResponse
+import com.example.taskhuman.dataModels.FavRemoveResponse
 import com.example.taskhuman.dataModels.TopicListResponse
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class TaskHumanRepositoryImpl @Inject constructor(private val githubApi: TaskHumanApi) :
+class TaskHumanRepositoryImpl @Inject constructor(private val taskHumanApi: TaskHumanApi) :
     TaskHumanRepository {
+    override suspend fun getListResults(query: String): TopicListResponse {
+        return taskHumanApi.getTopicList(query)
+    }
 
-    override fun getListResults(query: String): LiveData<TopicListResponse> {
-        TODO("Not yet implemented")
+    override suspend fun addFavResults(
+        skillName: String,
+        dictionaryName: String
+    ): FavAddResponse {
+        return taskHumanApi.addFavTopic(skillName, dictionaryName)
+    }
+
+    override suspend fun removeFavResults(skillName: String): FavRemoveResponse {
+        return taskHumanApi.removeFavTopic(skillName)
     }
 }
