@@ -69,6 +69,6 @@ ext {
             androidxHiltCompiler  : "androidx.hilt:hilt-compiler:$androidHiltVersion",
             hiltLifecycle         : "androidx.hilt:hilt-lifecycle-viewmodel:$androidHiltKaptVersion",
             paging                : "androidx.paging:paging-runtime:$pagingVersion",
-            multiSwipe            : "com.github.ygngy:multiswipe::$multiSwipe"
+            multiSwipe            : "com.github.ygngy:multiswipe:$multiSwipe"
     ]
 }
