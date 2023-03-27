@@ -1,4 +1,4 @@
-package com.example.taskhuman
+package com.example.taskhuman.ui
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
