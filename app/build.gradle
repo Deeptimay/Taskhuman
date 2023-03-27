@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 apply from: '../dependencies.gradle'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
     namespace 'com.example.taskhuman'
@@ -39,6 +40,8 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.core:core-ktx:+'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0'
     def appDependencies = rootProject.ext.appDependencies
 
     //Local libs
