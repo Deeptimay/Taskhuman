@@ -1,12 +1,9 @@
 package com.example.taskhuman.adapter
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.devs.vectorchildfinder.VectorChildFinder
-import com.devs.vectorchildfinder.VectorDrawableCompat
 import com.example.taskhuman.R
 import com.example.taskhuman.dataModels.OverlapImageModel
 import com.example.taskhuman.dataModels.Skill
