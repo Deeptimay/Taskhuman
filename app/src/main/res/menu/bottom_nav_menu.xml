@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_discover"
+        android:icon="@drawable/discover_icon"
+        android:title="@string/title_discover" />
+
+    <item
+        android:id="@+id/navigation_reconnect"
+        android:icon="@drawable/reconnect_icon"
+        android:title="@string/title_reconnect" />
+
+    <item
+        android:id="@+id/navigation_bookings"
+        android:icon="@drawable/bookings_icon"
+        android:title="@string/title_bookings" />
+
+    <item
+        android:id="@+id/navigation_messages"
+        android:icon="@drawable/messages_icon"
+        android:title="@string/title_messages" />
+
+    <item
+        android:id="@+id/navigation_blogs"
+        android:icon="@drawable/blogs_icon"
+        android:title="@string/title_blogs" />
+</menu>

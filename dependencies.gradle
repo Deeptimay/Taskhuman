@@ -11,6 +11,8 @@ ext {
     constraintLayoutVersion = '1.1.3'
     supportV4Version = '1.0.0'
     fragmentKtxVersion = '1.1.0'
+    fragmentNavigationUiVersion = '2.5.3'
+    fragmentNavigationKtxVersion = '2.5.3'
     materialVersion = '1.1.0'
     lifecycleExtensionsVersion = '2.1.0'
     cardViewVersion = '1.0.0'
@@ -36,10 +38,10 @@ ext {
     hiltAndroidXVersion = '1.0.0-alpha02'
 
     // multiSwipe RecyclerView
-    multiSwipe = '1.2.2'
+    multiSwipeVersion = '1.2.2'
 
     // overLapping ImageView
-    overlapImageGalleryView = '1.0.3'
+    overlapImageGalleryViewVersion = '1.0.3'
 
     //App/Presentation Layer
     appDependencies = [
@@ -49,6 +51,8 @@ ext {
             constraintLayout       : "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
             supportV4              : "androidx.legacy:legacy-support-v4:$supportV4Version",
             fragmentKtx            : "androidx.fragment:fragment-ktx:$fragmentKtxVersion",
+            fragmentNavigationUi   : "androidx.navigation:navigation-ui-ktx:$fragmentNavigationUiVersion",
+            fragmentNavigationKtx  : "androidx.navigation:navigation-fragment-ktx:$fragmentNavigationKtxVersion",
             material               : "com.google.android.material:material:$materialVersion",
             lifecycleExtensions    : "androidx.lifecycle:lifecycle-extensions:$lifecycleExtensionsVersion",
             lifecycleViewModel     : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleExtensionsVersion",
@@ -72,7 +76,7 @@ ext {
             androidxHiltCompiler   : "androidx.hilt:hilt-compiler:$androidHiltVersion",
             hiltLifecycle          : "androidx.hilt:hilt-lifecycle-viewmodel:$androidHiltKaptVersion",
             paging                 : "androidx.paging:paging-runtime:$pagingVersion",
-            multiSwipe             : "com.github.ygngy:multiswipe:$multiSwipe",
-            overlapImageGalleryView: "com.github.Mindinventory:OverlapImageGalleryView:$overlapImageGalleryView"
+            multiSwipe             : "com.github.ygngy:multiswipe:$multiSwipeVersion",
+            overlapImageGalleryView: "com.github.Mindinventory:OverlapImageGalleryView:$overlapImageGalleryViewVersion"
     ]
 }
