@@ -29,4 +29,29 @@
     <dimen name="_9sp">9sp</dimen>
     <dimen name="_3dp">3dp</dimen>
     <dimen name="_5dp">5dp</dimen>
+
+    <dimen name="dimen_divider_height">1dp</dimen>
+    <dimen name="dimen_avatar_placeholder">32dp</dimen>
+    <dimen name="dimen_avatar">48dp</dimen>
+    <dimen name="dimen_error_image">200dp</dimen>
+    <dimen name="dimen_avatar_placeholder_padding">21dp</dimen>
+    <dimen name="dimen_placeholder_username_trailing_margin">36dp</dimen>
+    <dimen name="dimen_placeholder_username_leading_margin">16dp</dimen>
+    <dimen name="dimen_placeholder_username_height">8dp</dimen>
+    <dimen name="dimen_repo_desc_margin">8dp</dimen>
+    <dimen name="dimen_repo_lang_margin">8dp</dimen>
+    <dimen name="dimen_lang_circle">10dp</dimen>
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="md_margin_padding_size_micro">4dp</dimen>
+    <dimen name="md_margin_padding_size_small">8dp</dimen>
+    <dimen name="md_margin_padding_size_medium">16dp</dimen>
+    <dimen name="md_margin_padding_size_large">24dp</dimen>
+    <dimen name="md_margin_padding_size_xlarge">32dp</dimen>
+    <dimen name="md_margin_padding_size_xxlarge">40dp</dimen>
+    <dimen name="md_margin_padding_size_xxxlarge">48dp</dimen>
+    <dimen name="md_margin_padding_size_xxxxlarge">56dp</dimen>
+    <dimen name="md_margin_padding_size_xxxxxlarge">62dp</dimen>
+    <dimen name="_12dp">12dp</dimen>
+    <dimen name="_30dp">30dp</dimen>
+    <dimen name="_25dp">25dp</dimen>
 </resources>

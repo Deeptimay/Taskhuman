@@ -10,10 +10,11 @@
 
     <color name="text_color">#FF3700B3</color>
 
-    <color name="swipe_background">#036103</color>
-    <color name="swipe_accept_background">#BA0846</color>
-    <color name="swipe_text">#C5E1A5</color>
-    <color name="swipe_accept_text">#F48FB1</color>
+    <color name="swipe_background">#CF2512</color>
+    <color name="swipe_accept_background">#CF2512</color>
+    <color name="swipe_accept_background_red">#CF2512</color>
+    <color name="swipe_text">#fff</color>
+    <color name="swipe_accept_text">#fff</color>
 
     <color name="view_background_color">#C8E6C9</color>
     <color name="view_background_accept_color">#F8BBD0</color>
@@ -22,4 +23,7 @@
     <color name="very_dark_grey">#3A3A3A</color>
     <color name="little_dark_grey">#949494</color>
     <color name="settings_color">#B5B5B5</color>
+
+    <color name="colorGrey">#dddddd</color>
+
 </resources>

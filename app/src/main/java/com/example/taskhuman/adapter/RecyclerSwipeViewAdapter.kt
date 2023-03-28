@@ -5,15 +5,18 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.devs.vectorchildfinder.VectorChildFinder
+import com.devs.vectorchildfinder.VectorDrawableCompat
+import com.example.taskhuman.R
 import com.example.taskhuman.dataModels.OverlapImageModel
 import com.example.taskhuman.dataModels.Skill
 import com.example.taskhuman.databinding.SingleRowItemBinding
 import com.example.taskhuman.swipeCreator.DefaultSwipeCreator
-import com.example.taskhuman.utils.Utils
 import com.github.ygngy.multiswipe.LeftSwipeList
 import com.github.ygngy.multiswipe.MultiSwipe
 import com.github.ygngy.multiswipe.RightSwipeList
 import com.mindinventory.overlaprecylcerview.decoration.OverlapRecyclerViewDecoration
+
 
 /**
  * A sample [RecyclerView] adapter used to show demo lists.
@@ -28,7 +31,7 @@ class RecyclerSwipeViewAdapter(context: Context, private val dataSet: List<Skill
     private val overlapLimit = 5
 
     //------set value of item overlapping in percentage between 0 to 100
-    private val overlapWidthInPercentage = -50
+    private val overlapWidthInPercentage = -100
 
     /**
      * Provide a reference to the type of views that you are using
@@ -49,19 +52,12 @@ class RecyclerSwipeViewAdapter(context: Context, private val dataSet: List<Skill
 
         fun bind(listItem: Skill) {
             this.item = listItem
-//            imageView.visibility = if (listItem.isFavorite) View.VISIBLE else View.GONE
-            binding.tvSkillTitle.text = listItem.displayTileName
-            binding.tvDateTime.text = listItem.availability?.startTime?.let {
-                Utils.convertTimeStampToDateString(
-                    it
-                )
-            }
-            try {
-                binding.ivColorDot.setColorFilter(Color.parseColor(listItem.availability?.color))
-            } catch (exp: Exception) {
-            }
+            binding.tvSkillTitle.text = listItem.tileName
+            binding.tvDateTime.text = binding.root.context.getString(R.string.dummy_time)
 
             try {
+//                binding.ivColorDot.setColorFilter(Color.parseColor(listItem.availability?.color))
+
                 //------set item decoration for item overlapping
                 binding.rvImageList.addItemDecoration(
                     OverlapRecyclerViewDecoration(
@@ -75,16 +71,11 @@ class RecyclerSwipeViewAdapter(context: Context, private val dataSet: List<Skill
                 val overlapImageModel = ArrayList<OverlapImageModel>()
                 for (i in listItem.providerInfo!!)
                     i.profileImage?.let { OverlapImageModel(it) }?.let { overlapImageModel.add(it) }
-
                 recyclerImageOverLapAdapter.addAll(overlapImageModel)
-                recyclerImageOverLapAdapter.notifyDataSetChanged()
-            } catch (exp: Exception) {
-            }
 
-//            binding.rvImageList.text = listItem.displayTileName
-//            view.setOnClickListener {
-////                onClick(listItem.tileName, listItem.dictionaryName)
-//            }
+                recyclerImageOverLapAdapter.notifyDataSetChanged()
+            } catch (_: Exception) {
+            }
 
             mRightSwipeList = RightSwipeList(
                 sc.getLikeSwipe(listItem.isFavorite)

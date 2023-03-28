@@ -43,7 +43,7 @@ class SwipeCreator(context: Context, withLabel: Boolean) : SwipeCreatorBase(cont
         val shareLabel = if (withLabel)
             SwipeLabel(
                 text = getString(R.string.share_label),
-                textColor = getColor(R.color.swipe_text),
+                textColor = getColor(R.color.white),
                 textSize = getDimension(R.dimen.swipe_text_size),
                 margin = getDimension(R.dimen.swipe_text_margin),
             )
@@ -61,14 +61,14 @@ class SwipeCreator(context: Context, withLabel: Boolean) : SwipeCreatorBase(cont
         val shareTheme = SwipeTheme(
             icon = shareIcon,
             label = shareLabel,
-            backgroundColor = getColor(R.color.swipe_background),
-            viewColor = getColor(R.color.view_background_color)
+            backgroundColor = getColor(R.color.swipe_accept_background_red),
+            viewColor = getColor(R.color.swipe_accept_background_red)
         )
 
         val shareAcceptTheme = shareTheme.copy(
-            backgroundColor = getColor(R.color.swipe_accept_background),
-            label = shareLabel?.copy(textColor = getColor(R.color.swipe_accept_text)),
-            viewColor = getColor(R.color.view_background_accept_color)
+            backgroundColor = getColor(R.color.swipe_accept_background_red),
+            label = shareLabel?.copy(textColor = getColor(R.color.white)),
+            viewColor = getColor(R.color.swipe_accept_background_red)
         )
 
         val likedTheme = shareTheme.extend(

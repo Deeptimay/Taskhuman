@@ -45,6 +45,9 @@ class DiscoverFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getTopicListResponseMutableLivedata().observe(viewLifecycleOwner) {
+            binding.loadingLayout.containerShimmer.visibility = View.GONE
+            binding.recyclerView.visibility = View.VISIBLE
+            hideLoadingState()
             binding.recyclerView.apply {
                 layoutManager = LinearLayoutManager(this@DiscoverFragment.requireContext())
                 adapter =
@@ -70,7 +73,9 @@ class DiscoverFragment : Fragment() {
             }
 
         })
-
+        binding.loadingLayout.containerShimmer.visibility = View.VISIBLE
+        binding.recyclerView.visibility = View.GONE
+        displayLoadingState()
         viewModel.getListResults()
     }
 
@@ -93,4 +98,13 @@ class DiscoverFragment : Fragment() {
         }
     }
 
+    fun displayLoadingState() {
+        binding.loadingLayout.containerShimmer.showShimmer(true)
+        binding.loadingLayout.containerShimmer.startShimmer()
+    }
+
+    fun hideLoadingState() {
+        binding.loadingLayout.containerShimmer.hideShimmer()
+        binding.loadingLayout.containerShimmer.stopShimmer()
+    }
 }
