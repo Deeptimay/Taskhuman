@@ -6,7 +6,7 @@ data class Skill(
     val columns: Int,
     val dictionaryName: String,
     val displayTileName: String,
-    val isFavorite: Boolean,
+    var isFavorite: Boolean,
     val moreProvidersAvailable: Boolean,
     val providerInfo: List<ProviderInfoX>,
     val skillIcon: String,
@@ -14,4 +14,8 @@ data class Skill(
     val tileColor: String,
     val tileName: String,
     val type: String
-)
+) {
+    fun toggleLike() {
+        isFavorite = !isFavorite
+    }
+}

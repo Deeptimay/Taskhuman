@@ -1,12 +1,9 @@
 package com.example.taskhuman.repository
 
-import androidx.lifecycle.LiveData
-import com.example.taskhuman.dataModels.FavAddResponse
-import com.example.taskhuman.dataModels.FavRemoveResponse
-import com.example.taskhuman.dataModels.TopicListResponse
+import com.example.taskhuman.dataModels.*
 
 interface TaskHumanRepository {
     suspend fun getListResults(query: String): TopicListResponse
-    suspend fun addFavResults(skillName: String, dictionaryName: String): FavAddResponse
-    suspend fun removeFavResults(skillName: String): FavRemoveResponse
+    suspend fun addFavResults(favAddRequest: FavAddRequest): FavAddResponse
+    suspend fun removeFavResults(favRemoveRequest: FavRemoveRequest): FavRemoveResponse
 }

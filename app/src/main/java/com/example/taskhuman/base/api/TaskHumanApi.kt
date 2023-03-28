@@ -1,8 +1,6 @@
 package com.example.taskhuman.base.api
 
-import com.example.taskhuman.dataModels.FavAddResponse
-import com.example.taskhuman.dataModels.FavRemoveResponse
-import com.example.taskhuman.dataModels.TopicListResponse
+import com.example.taskhuman.dataModels.*
 import retrofit2.http.*
 
 
@@ -27,10 +25,7 @@ interface TaskHumanApi {
         "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQ3MTYsInVzZXJzIjp7InN0YXR1cyI6MCwidHlwZSI6MCwiaXNNb2JpbGVWZXJpZmllZCI6dHJ1ZX0sImlhdCI6MTY3OTU3MzU4N30.gaiGbeN9tWIojmvSj0imKtCWW0wMhLzN-UjmXevzuyk"
     )
     @POST("v0.8/favorite/add")
-    suspend fun addFavTopic(
-        @Query("skillName") skillName: String,
-        @Query("dictionaryName") dictionaryName: String
-    ): FavAddResponse
+    suspend fun addFavTopic(@Body favAddRequest: FavAddRequest): FavAddResponse
 
     @Headers(
         "Accept: */*",
@@ -38,7 +33,5 @@ interface TaskHumanApi {
         "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQ3MTYsInVzZXJzIjp7InN0YXR1cyI6MCwidHlwZSI6MCwiaXNNb2JpbGVWZXJpZmllZCI6dHJ1ZX0sImlhdCI6MTY3OTU3MzU4N30.gaiGbeN9tWIojmvSj0imKtCWW0wMhLzN-UjmXevzuyk"
     )
     @POST("v0.8/favorite/remove")
-    suspend fun removeFavTopic(
-        @Query("skillName") skillName: String
-    ): FavRemoveResponse
+    suspend fun removeFavTopic(@Body favRemoveRequest: FavRemoveRequest): FavRemoveResponse
 }
